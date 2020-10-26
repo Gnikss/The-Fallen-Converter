@@ -7,6 +7,8 @@ Code done by Fallen, Concept done by Gnik
 
 For Questions/Suggestions Message @Gnik#0001 or Fallen#0448 on Discord
 
+If you'd like to support this project you can [Donate Here](https://paypal.me/OblivionGS)
+
 HOW TO USE: Place types.xml file into your The Fallen Converter File with the converter.exe and run the exe. See TraderConfig.txt for output
 
 NOTICE:
