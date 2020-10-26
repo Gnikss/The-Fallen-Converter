@@ -144,6 +144,8 @@ for child in root:
 f = open("TraderConfig.txt", "w")
 f.write(precursor)
 
+typeNames = []
+
 for trader in traders:
 	f.write("\n\n<Trader> " + trader)
 	
@@ -151,6 +153,11 @@ for trader in traders:
 		if category in traders[trader]:
 			f.write("\n" + 	"	<Category> " + category.capitalize() + "\n")
 			for item in categories[category]:
+				if (item["name"] in typeNames):
+					continue
+
+				typeNames.append(item["name"])
+
 				writeString = "{:<70}".format("		" + item["name"] + ",")
 				f.write(writeString + item["quantity"] + ",			1,			-1\n")
 
