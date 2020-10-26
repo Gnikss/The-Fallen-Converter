@@ -27,6 +27,8 @@ categories = {
 	"Mass": [],
 	"Cp": [],
 	"Mung": [],
+	"Ammo": [],
+	"Mag": []
 }
 
 traders = {
@@ -34,7 +36,7 @@ traders = {
 	"Misc Trader": ["Containers", "Tools", "Viking", "Bbp", "Msp", "Mass", "Cp", "Mung"], # 1
 	"Weapon Trader": ["Weapons", "Explosives"], # 2
 	"Clothing Trader": ["Clothes"], # 3
-	"Weapon Supplies Trader": [""], # 4
+	"Weapon Supplies Trader": ["Mag", "Ammo"], # 4
 	"Vehicles Trader": ["Vehiclesparts", "Vehicles"] # 5
 }
 
@@ -92,8 +94,11 @@ for child in root:
 	elif name[:11].lower() == "rag_hummer_":
 		category = "Vehiclesparts"
 
-	elif name[:10].lower() == "rag_viking":
-		category = "Viking"
+	elif name[:4].lower() == "mag_":
+		category = "Mag"
+
+	elif name[:4].lower() == "ammo":
+		category = "Ammo"
 
 	elif name[-9:].lower() == "destroyed":
 		continue
