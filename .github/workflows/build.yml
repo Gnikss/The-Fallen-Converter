@@ -24,7 +24,11 @@ jobs:
     - name: Archive Artifacts
       uses: actions/upload-artifact@v2
       with:
-        name: name-of-artifact
-        path: |
-          src/dist/linux
-          src/dist/windows
+        name: Linux
+        path: src/dist/linux
+
+    - name: Archive Artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: Windows
+        path: src/dist/windows
