@@ -1,0 +1,30 @@
+name: Build
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+	  runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Package Linux Application
+      uses: JackMcKew/pyinstaller-action-linux@main
+        with:
+          path: src
+
+    - name: Package Windows Application
+      uses: JackMcKew/pyinstaller-action-windows@main
+      with:
+        path: src
+
+    - name: Archive Artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: name-of-artifact
+        path: |
+          src/dist/linux
+          src/dist/windows
